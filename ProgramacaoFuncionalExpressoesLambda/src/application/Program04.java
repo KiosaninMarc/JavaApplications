@@ -17,7 +17,7 @@ public class Program04 {
 		list.add(new Product("Tablet", 350.00));
 		list.add(new Product("HD Case", 80.90));
 
-		list.removeIf(Product::staticProductPredicate/*Method reference*/);
+		list.removeIf(Product::nonStaticProductPredicate/*Method reference*/);
 		//Coloco o nome da classe onde o metodo está :: e o nome do metodo
 		//Isso tambem é aceito no sistema lambda do java
 		
