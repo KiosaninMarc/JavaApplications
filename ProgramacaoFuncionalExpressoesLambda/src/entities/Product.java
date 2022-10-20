@@ -29,6 +29,11 @@ public class Product {
 		this.price = price;
 	}
 
+	//vou fazer um metodo que pega um produto e retorna um boleano
+	public static boolean staticProductPredicate(Product p) {
+		return p.getPrice() >= 100.0;
+	}
+	
 	@Override
 	public String toString() {
 		return "Product [name=" + name + ", price=" + price + "]";

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entities.Product;
-import util.ProductPredicate;
 
 public class Program04 {
 
@@ -18,7 +17,9 @@ public class Program04 {
 		list.add(new Product("Tablet", 350.00));
 		list.add(new Product("HD Case", 80.90));
 
-		list.removeIf(new ProductPredicate());//Colocar o Predicado implementado manualmente por meio da interface
+		list.removeIf(Product::staticProductPredicate/*Method reference*/);
+		//Coloco o nome da classe onde o metodo está :: e o nome do metodo
+		//Isso tambem é aceito no sistema lambda do java
 		
 		for (Product p : list) {
 			System.out.println(p);
