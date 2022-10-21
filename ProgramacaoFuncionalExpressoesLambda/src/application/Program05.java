@@ -1,5 +1,4 @@
 package application;
-//Expressao lambda inline
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +6,11 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Product;
+import util.PriceUpdate;
 
-public class Program04 {
+//Consumer (exemplo com forEach)
+//Implementação da interface
+public class Program05 {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
@@ -18,21 +20,16 @@ public class Program04 {
 		
 		list.add(new Product("TV", 900.00));
 		list.add(new Product("Mouse", 50.00));
-		list.add(new Product("Tablet", 350.00));
+		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		System.out.print("Digite o valor minimo: ");
-		double min = sc.nextDouble();
+		list.forEach(new PriceUpdate());
 
-		list.removeIf(p -> p.getPrice() >= min);
-		
-		for (Product p : list) {
-			System.out.println(p);
-		}
-		
-		sc.close();
+		list.forEach(System.out::println);
 	}
+
 }
 
-//Fazer um programa que, a partir de uma lista de produtos, remova da
-//lista somente aqueles cujo preço mínimo seja 100.
+
+/*Fazer um programa que, a partir de uma lista de produtos, aumente o
+preço dos produtos em 10%.*/
