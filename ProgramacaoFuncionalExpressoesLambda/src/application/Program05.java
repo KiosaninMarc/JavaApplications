@@ -1,9 +1,11 @@
 package application;
-//Reference Method com metodo nao estatico
+//Expressao lambda declarada
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.function.Consumer;
+
 import entities.Product02;
 
 //Consumer (exemplo com forEach)
@@ -21,7 +23,12 @@ public class Program05 {
 		list.add(new Product02("Tablet", 350.50));
 		list.add(new Product02("HD Case", 80.90));
 		
-		list.forEach(Product02::nonStaticPriceUpdate);
+		System.out.print("Porcentagem: ");
+		double factor = sc.nextDouble();
+		
+		Consumer<Product02> cons = p -> p.setPrice(p.getPrice() * factor);
+		
+		list.forEach(cons);
 
 		list.forEach(System.out::println);
 	}
