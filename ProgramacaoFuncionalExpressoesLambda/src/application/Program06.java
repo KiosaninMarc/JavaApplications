@@ -1,5 +1,5 @@
 package application;
-//Interface Function - 02Reference method com metodo estatico
+//Interface Function - 03Reference method com metodo nao estatico
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -21,7 +21,7 @@ public class Program06 {
 		list.add(new Product03("Tablet", 350.50));
 		list.add(new Product03("HD Case", 80.90));
 
-		List<String> names = list.stream().map(Product03::staticUpperCaseName).collect(Collectors.toList());
+		List<String> names = list.stream().map(Product03::nonStaticUpperCaseName).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);
 		
